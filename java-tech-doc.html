@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Java Language Fundamentals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <h1 id="headline"> Java Language Fundamentals</h1>
+        </header>
+        <ol id="nav-list">
+            <li><a class="nav-link" href="#Section_Objectives">Section Objectives</a></li>
+            <li><a class="nav-link" href="#Writing_Java_Code">Writing Java Code</a></li>
+            <li><a class="nav-link" href="#Data_Types_and_Variables">Data Types and Variables</a></li>
+            <li><a class="nav-link" href="#Methods">Methods</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ol>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Section_Objectives">
+            <header>
+                <h2>Section Objectives</h2>
+            </header>
+            <hr class="section_div">
+            <div class="sect-content">
+                <ul id="sect-objective">
+                    <li>Locate and trace the file structure behind a project in STS</li>
+                    <li>Use Java primitives in simple data manipulation</li>
+                    <li>Use reference types and manipulate them in code</li>
+                    <li>Explain why Java made “goto” a keyword</li>
+                    <li>Illustrate the components of the “method signature” in your code</li>
+                    <li>Use primitives for “promotion” and explicit “casting” in your code</li>
+                    <li>Explain why one would use Javadoc documentation</li>
+                </ul>
+            </div>
+
+        </section>
+        <section class="main-section" id="Writing_Java_Code">
+            <header>
+                <h2>Writing Java Code</h2>
+            </header>
+            <hr class="section_div">
+            <div class="sect-content">
+                <h4><a id="Java_Source_Files_26"></a>Java Source Files</h4>
+                <ul>
+                    <li>In Java, almost everything belongs inside of a class, i.e., inside…</li>
+                    <pre>
+                <code>
+                class Example{
+                     ...
+                }
+            </code></pre>
+                </ul>
+                <ul>
+                    <li>
+                        <p>There should generally be only one class per source file, and the names should match… for
+                            example
+                            a
+                            class
+                            named Student should be placed in <em>Student.java</em>, and be the only class in the
+                            Student.java
+                            file.</p>
+                    </li>
+                    <li>
+                        <p>JAVA IS CASE SENSITIVE<br>
+                            – The sooner you accept this reality, the better.<br>
+                            – There are a few things that can be expressed both in upper and lower case, but not many.
+                        </p>
+                    </li>
+                </ul>
+
+                <hr>
+                <p><b>Java Language Elements</b></p>
+                <ul>
+                    <li>Java source files contains various elements, such as:
+                        <ul>
+                            <li>Classes</li>
+                            <li>Variables</li>
+                            <li>Methods</li>
+                            <li>Comments</li>
+                            <li>Reserved words</li>
+                            <li>Modifiers</li>
+                            <li>Statements</li>
+                            <li>Block</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <hr>
+                <h4>Classes</h4>
+                <ul>
+                    <li>A class consists of two fundamental kinds of things:</li>
+
+                    <ul>
+                        <li>Variables</li>
+                        <li>Methods</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>A class describes its objects–The data (variables) that each object of the class will have–The
+                        operations
+                        (methods) defined on those objects</li>
+                </ul>
+                <ul>
+                    <li>A class is a way to model an OO concept </li>
+                </ul>
+                <ul>
+                    <li>We will revisit this later. First, we have to learn more about the language</li>
+                </ul>
+
+
+                <hr>
+                <h4>Packages</h4>
+                <ul>
+                    <li>Java classes are organized into <b>packages</b> </li>
+                    <ul>
+                        <li>Packages are directories on the file system </li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>A class without a package statement is in the <b>default package</b> </li>
+                    <ul>
+                        <li>A package with no name</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Class names must be unique within a package </li>
+                </ul>
+
+                <ul>
+                    <li>The Java Core API library is divided up into packages</li>
+                    <ul>
+                        <li><b> java.lang, java.net, java.io, etc</b></li>
+                    </ul>
+                </ul>
+
+                <hr>
+                <h4>Identifiers</h4>
+                <ul>
+                    <li>Names used for classes, variables and methods </li>
+                </ul>
+
+                <ul>
+                    <li>Can be made up of any length of:</li>
+                    <ul>
+                        <li>Letters</li>
+                        <li>Digits</li>
+                        <li>Underscore (_)</li>
+                        <li>Dollar ($)</li>
+                        <li>Cannot begin with a digit</li>
+                        <li>Cannot be a Java keyword (we'll see these soon)</li>
+                        <li>Packages are directories on the file system </li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li><b>Java is case sensitive</b> </li>
+                    <ul>
+                        <li> <b>User</b> and <b>user</b> are completely
+                            different identifiers </li>
+                    </ul>
+                </ul>
+
+                <p>Take a look at the list of correct/incorrect identifiers below</p>
+                <ul>
+                    <li>Valid identifiers:</li>
+                    <pre>
+                    <code>
+                    MyClass
+                    myVariable
+                    MY_VARIABLE
+                    x
+                    _myvariable
+                    $myvariable
+                </code></pre>
+
+                    <li>Invalid identifiers:</li>
+                    <pre>
+                     <code>
+                     My Variable      // contains a space
+                     9pins begins     // with a digit</li>
+                     a+c+             // + is not an alphanumeric character</li>
+                     testing1-2-3 a   // - is not an alphanumeric character</li>
+                    </code></pre>
+                </ul>
+
+                <hr>
+                <h4 class="pic_header">Java Keywords</h4>
+                <ul>
+                    <li>There are words in the Java language that perform specific operations when used</li>
+                    <li> These words, with case sensitivity being taken into consideration, CAN'T be use as identifiers
+                    </li>
+                    <p> <b> Java Keywords Chart</b>
+                        <img class="slide" src="images/keywords_chart.PNG" alt="keywords_chart">
+                    </p>
+                </ul>
+                <hr>
+                <h4>Java Naming Conventions</h4>
+                <ul>
+                    <li>While not strictly required (by the compiler), pretty much law</li>
+                </ul>
+
+                <ul>
+                    <li><b>Class names</b> begin with a <b>capital letter</b> </li>
+                    <ul>
+                        <li>Class examples</li>
+                        <ul>
+                            <li>String</li>
+                            <li>System</li>
+                            <li>Person</li>
+                            <li>HelloWorld</li>
+                        </ul>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Variable and method names begin with a lowercase letter</li>
+                    <ul>
+
+                        <li>Variable examples:</li>
+                        <ul>
+                            <li>name</li>
+                            <li>age</li>
+                            <li>initialCount</li>
+                            <li>buffer_Size</li>
+
+                        </ul>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li>Method examples:</li>
+                        <ul>
+                            <li>getName()</li>
+                            <li>setAge()</li>
+                            <li>println()</li>
+                            <li>calculateInterest()</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>In both cases, subsequent "words" in the name are capitalized</li>
+                </ul>
+
+                <hr>
+                <h4>Comments</h4>
+                <ul>
+                    <li>Single line</li>
+                    <ul>
+                        <li>Begin with //</li>
+                        <li>Continues to end of line</li>
+                        <pre>
+                        <code>
+                        // single-line comments
+                    </code></pre>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Multi-line or "block"</li>
+                    <ul>
+                        <li>Begin with /*and end with */</li>
+                        <li>Cannot nest these type of comments</li>
+                    </ul>
+                    <pre>
+                        <code>
+                        /*
+                        this comment spans
+                        several lines
+                        */
+         </code>
+       </pre>
+                </ul>
+
+                <ul>
+                    <li>Javadoc documentation comments</li>
+                    <ul>
+                        <li>Begin with /**and end with */</li>
+                        <li>Read by javadoc tool to generate HTML-based API doc (later)</li>
+                    </ul>
+                </ul>
+
+                <hr>
+                <h4>Whitespaces</h4>
+                <ul>
+                    <li>Spaces, blank lines and tabs</li>
+                    <ul>
+                        <li>Used to separate words and symbols in a program</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Extra white space is ignored by the compiler</li>
+                    <ul>
+                        <li>Add white space to make your code more readable</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Code should be formatted to enhance readability using consistent indentation.</li>
+                    <li>Review the code snippets below. Which of the two code blocks is easier to read?
+                        <ul>
+                            <img class="slide" src="images/white_space_code_snippet.PNG" alt="white_space_example">
+                            <li>As you can see the second code snippet is more legible. Each line includes <b>ONE</b>
+                                semicolon,
+                                which
+                                concludes
+                                the logic of that line</li>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+        </section>
+
+        <section class="main-section" id="Data_Types_and_Variables">
+            <header>
+                <h2>Data Types and Variables</h2>
+            </header>
+            <hr class="section_div">
+            <div class="sect-content">
+                <h4>Data Types</h4>
+                <ul>
+                    <li>All data in Java has a type</li>
+                    <li>Data can be of primitive type; interface or class type(more on this later) </li>
+                    <ul>
+                        <li> <b>String</b> ia a class </li>
+                    </ul>
+                    <h4>List of primitive types</h4>
+
+                    <div class="slide" id="primitive_img">
+                        <img class="slide" src="images/primitive_img.PNG" alt="primitives" height="180px" width="180px">
+                </ul>
+                <hr>
+                <h4>Literals</h4>
+                <ul>
+                    <li><b>Integer literals:</b> </li>
+                    <img class="slide" src="images/integer_literals_table.PNG" alt="literals_table">
+                </ul>
+                <ul>
+                    <li><b> Floating point literals:</b></li>
+                    <img class="slide" src="images/floating_literals_table.PNG" alt="literals_table">
+                </ul>
+
+                <ul>
+                    <li><b>Boolean</b> literals are true or false</li>
+                </ul>
+
+                <ul>
+                    <li><b>Character</b> literals are expressed using single quotes 'a'</li>
+                    <ul>
+                        <li>In java a char contains a single character only
+                            <br>A String class is used if the data contains multiple characters</li>
+                    </ul>
+                </ul>
+
+                <hr>
+                <h4>Variables</h4>
+                <ul>
+                    <li>Location in memory that can hold values of a certain type</li>
+                </ul>
+                <ul>
+                    <h4>Declaration</h4>
+                    <ul>
+                        <li>Variables must before declare before used
+                            <br> Declaration allocates memory to hold a value
+                        </li>
+                        <li>Declaration take the form of : <b>variable-type</b> <b>variable-name</b> ;</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <h4>Assignment</h4>
+                    <ul>
+                        <li>Assignment is providing the value to be be stored by a variable</li>
+                        <li>Assignment take the form of : <b> variable-name = value ;</b></li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>Assignment is done from <b>right to left</b> . The value is determined then assigned to to the
+                        variable
+                    </li>
+                    <ul>
+                        <li>Value can be a literal or an expression</li>
+                        <li>Value can be returned from a method</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Declaration and assignment together : <b> variable-type variable-name = value ;</b></li>
+                </ul>
+                <pre>
+         <code>
+         int sum;      //declaration
+         sum = 3 +7;   //assignment
+         </code>
+      </pre>
+
+                <pre>
+         <code>
+         //declaration and assignment together
+         int age = p.getAge();   // p is referencing a Person object
+         </code>
+      </pre>
+
+                <hr>
+                <h4 class="sub-title">Primitive Variables and Reference Variables</h4>
+
+                <ul>
+                    <li>Data is held one of two ways</li>
+                    <ul>
+                        <li><b> Primitive variable</b>- stores the data directly</li>
+                        <li><b> Reference variable</b>- stores a reference to a object</li>
+                    </ul>
+                </ul>
+
+                <pre>
+            <code>
+            int i = 13;                 // i is a primitive variable that hold the value 3
+ 
+            Person p = new Person();   // p is a reference or pointer to a Person object
+     </code></pre>
+                <a href="https://ibb.co/s3CFNKn"><img class="slide" src="https://i.ibb.co/ry3ZzxY/Slide4-1.png"
+                        alt="Slide4-1" border="0"></a>
+                </ul>
+
+                <hr>
+                <h4 class="sub-title">Primitive Variables </h4>
+                <ul>
+                    <li>Primitive types are the building blocks of data manipulation.They are use to avoid the
+                        <br> overhead associated with objects and references</li>
+                    <li>There are eight types of primitives
+                        <img class="slide" src="images/primitive_hiearchy_tree.PNG" alt="primitive_hiearchy_tree">
+                    </li>
+                    <p>** Here's a tip to help memorize them: "Bears Shouldn't Ingest Large Fluffy Dog"</p>
+                </ul>
+
+                <hr>
+                <h4>Integer Primitives</h4>
+                <ul>
+                    <li>There are four integer primitives: byte, short int, long
+                        <br> All integer primitives are signed(can be negative or positive numbers)
+                        <br>By default all integer literals are of type <b>int</b>
+                    </li>
+                </ul>
+
+                <pre>
+            <code>
+            byte smallNumber = 1234;               
+            short mediumNumber = 12345;
+            int avergeNumber = 123456789;
+            long bigNumber = 123456789123L;      // number is too big for an int
+            int octoNumber = 025;               // 21 in decimal
+            int hexaNumber = 0x25;             //  37 in decimal
+                </code></pre>
+                <hr>
+                <h4>Integer Primitives- Range of Values</h4>
+                <ul>
+                    <li>Each integer primitive has a given size(bits), and has a minimum and maximum value that it can
+                        store
+                    </li>
+                    <li>The table below details these elements</li>
+                    <br>
+                    <img class="slide" src="images/integer_range_chart.PNG" alt="integer_range_chart">
+                </ul>
+                <br>
+                <ul>
+                    <h4>Storing Integer Primitives</h4>
+                    <li>All integer primitives are signed(can be negative or positive numbers)
+                        <ul>
+                            <li> 0 for positive numbers and zero</li>
+                            <li> 1 for negative numbers </li>
+                        </ul>
+                </ul>
+                <ul>
+
+                    <li>Java uses two's complement to store negative integers </li>
+                    <li>Invert the bits and add one to get the negative value, (More on bit shifting and conversion
+                        later)
+                    </li>
+                    <br>
+                    <img class="slide" src="images/integer_range_example.PNG" alt="integer_range">
+                </ul>
+
+                <hr>
+                <h4>Floating Point Primitives</h4>
+                <ul>
+                    <li>There are two floating point primitives: float, double
+                        <br>IEEE 754 standard for 32-and 64-bit floating point numbers:
+                        http://grouper.ieee.org/groups/754/
+                        <br>By default all floating point literals are of type <b>double</b>
+                    </li>
+                    <pre>
+        <code>
+        float firstFloat = 1234.00f;          //  f use to indictate float, not double
+        float secondFloat = 1.2345F;         //  F and f are interchangeable
+        double firstDouble = 333.33;
+        double secondDouble = 444.44d;      // d and D are interchangeable (not needed here)
+        double thirdDouble = 4.8E12;       // 4.8x10^12 (e and E are interchangeable)
+     </code></pre>
+                    <pre>
+        <code>
+        float firstFloat = 1234.00f;          //  f use to indictate float, not double
+        float secondFloat = 1.2345F;         //  F and f are interchangeable
+        double firstDouble = 333.33;
+        double secondDouble = 444.44d;      // d and D are interchangeable (not needed here)
+        double thirdDouble = 4.8E12;       // 4.8x10^12 (e and E are interchangeable)
+     </code></pre>
+                </ul>
+
+                <hr>
+                <h4>Char Primitives</h4>
+                <ul>
+                    <li>char primitive use <b>single quotes</b> around a <b>single</b> literal character</li>
+                    <pre>
+        <code>
+        char myChar = 'a';
+        char tab = '\t'; //backslash (/) is the escape character in Java
+        </code></pre>
+                </ul>
+
+                <ul>
+                    <li> A <b></b> char is stored internally as a 16-bit unsigned integer
+                        <ul>
+                            <li>Its value is the Unicode value of the character </li>
+                            <li>Unicode is a <b>superset</b> of ASCII. It supports Latin and non-Latin alphabets</li>
+                            <li>QUIZ: How many characters can unicode represent? <br> HINT: ASCII is 7-bit and can
+                                represent
+                                128
+                                characters</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>The Unicode value of ais 97; Ais 65</li>
+                </ul>
+                <ul>
+                    <li>Since a <b>char</b> is really an integer, you can convert back and forth to other integer
+                        primitives
+                        (rules
+                        later)</li>
+                </ul>
+
+                <hr>
+                <h4>Boolean Primitives</h4>
+                <ul>
+                    <li>a boolean only values are <b>true</b> and <b>false</b> . It does not accept numeric values <br>
+                        ( 0 or 1) like other programming languages, It is still however stored internally as 0 and 1
+                    </li>
+                    <pre>
+        <code>
+        boolean firstBoolean = true;
+        boolean secondBoolean = false;
+        boolean wrongBoolean = 0;              // ERROR: must be true or false
+        boolean quotesBoolean = "true";       //  ERROR: "true" is a String!
+     </code></pre>
+                </ul>
+                <ul>
+                    <li>Naming convention: Name booleans in the form of a question
+                        <br>The value answers the question
+                    </li>
+                    <pre>
+        <code>
+        boolean isRaining = true;       // they must live in Seattle
+       </code></pre>
+                </ul>
+
+                <hr>
+                <h4>Binary Literals</h4>
+                <ul>
+                    <li>In Java 7, the primitives byte, int, short and long can also be expressed using the binary
+                        number
+                        system
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>In order to specify a binary literal, you add the prefix 0b or 0B to the number</li>
+                </ul>
+
+                <ul>
+                    <li>The following are examples of binary literals:</li>
+                    <pre>
+        <code>
+        byte aByte= (byte)0b00100001;     //An 8 –bit ‘byte’ value
+        short ahort= (short)0b1010000101000101;       //A 16-bit ‘short’ value
+        int integer1 = 0b10100001010001011010000101000101;
+        int integer2 = 0b101;     //Some 32-bit ‘int’ values
+        </code></pre>
+                </ul>
+
+                <hr>
+                <h4>Underscores in Numeric Literals</h4>
+                <ul>
+                    <li>In Java 7, underscore characters can appear anywhere between digits in a numerical literal</li>
+                </ul>
+
+                <ul>
+                    <li>This feature allows us to separate groups of digits in numeric literals which can improve the
+                        readability of
+                        your code</li>
+                </ul>
+
+                <ul>
+                    <li>The following examples demonstrate valid underscore placement:</li>
+                    <pre>
+        <code>
+        int binary = 0b1001_1001;    //binary</li>
+        int x = 99_9; </li>
+        int y = 99______9;</li>
+        float f = 99.9__9F;</li>
+        double d = 0_99.99;</li>
+        </code></pre>
+                </ul>
+
+
+                <hr>
+                <h4>Primitive Type Conversion and Casting</h4>
+                <ul>
+                    <li>"Upcasts" to a larger type are implicit and automatic</li>
+                    <li>"Upcasts" to a larger type are implicit and automatic
+                        <ul>
+                            <li>Because you might lose data and/or precision</li>
+                        </ul>
+                    </li>
+                    <pre>
+         <code>
+          float length = 2.1F;                  // 2.1F is shorthand for (float) 2.13
+          float width = 4.51F;
+          double area = length * width;        // auto upcast to double
+
+          float approxArea = (float) area;    // explicit downcast to float
+         </code></pre>
+                </ul>
+
+                <ul>
+                    <li>"Upcasts" or conversion may occur during operations</li>
+                    <pre>
+                    <code>
+                    int + long --> long             // int converted to long
+                    float + double --> double      //  float converted to double
+                    int + float --> float         //   int converted to float
+          </code></pre>
+                </ul>
+                <hr>
+                <h4>Primitives Review Chart
+                    <img class="slide" src="images/primitive_review_chart.PNG" alt="">
+                </h4>
+            </div>
+        </section>
+        <section class="main-section" id="Methods">
+            <header>
+                <h2>Methods</h2>
+            </header>
+            <hr class="section_div">
+            <div class="sect-content">
+                <h4>Introduction to Methods</h4>
+                <ul>
+                    <li>Remember: Objects are about <b>responsibility</b> </li>
+                    <ul>
+                        <li>Responsibilities are fulfilled by the object's operations that it can
+                            perform</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <p>Methods break up the object's functionality into distinct, cohesive units </p>
+                    <p> Cohesiveness(" being about one thing") ensure the method has a tightly defined job, and not a
+                        "do it
+                        all
+                        here" structure</p>
+                    <p>Methods should be modular in design, which allows for more code reusability</p>
+                </ul>
+
+                <hr>
+                <h4>Defining Methods</h4>
+                <ul>
+                    <h4>Anatomy of a method:</h4>
+                    <li>return-type method-name(param-type param-name, ...) { // method "body" -implementation code goes
+                        here}
+                    </li>
+                    <pre>
+        <code>
+        void getName(String name){
+          // code...
+        }
+      </code></pre>
+                </ul>
+
+                <ul>
+                    <li>Return type- The data type of the value that a method sent back</li>
+                    <ul>
+                        <li>keyword "void" is used if it returns nothing</li>
+                        <li>inside the method the "return" keyword is use to return a value </li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Method name - a valid Java identifier( i.e methodName)</li>
+                </ul>
+                <ul>
+                    <li>Parameters –Each one just like a variable declaration</li>
+                    <ul>
+                        <li>Enclosed in parentheses, separated by commas</li>
+                        <li>There can be 0 - infinity parameters</li>
+                        <li> () - empty parenthesis use for no parameters</li>
+                    </ul>
+                    <ul>
+                        <li>Code block - everything the curly braces enclose {} </li>
+                    </ul>
+                </ul>
+
+                <hr>
+                <h4>Method Signature</h4>
+                <ul>
+
+                    <li>Method signature = name + parameter list (just the types)</li>
+                    <ul>
+                        <li>The return type is technically NOT part of the signature
+                            <br>BUT we care about it and will often include it in examples anyway </li>
+                    </ul>
+                    <ul>
+                        <li>The method signature of <b>Turtle</b> are shown below</li>
+                    </ul>
+                    <br>
+                    <img class="slide" src="images/method_signature_img.PNG" alt="method_signature">
+                </ul>
+
+
+                <hr>
+                <h4><b>main</b> Method - Revisited</h4>
+                <ul>
+                    <li>main is a somewhat special method. It is the point of entry for every Java Application</li>
+                    <ul>
+                        <li>The JVM starts your program by invoking the <b>main</b> method </li>
+                        <pre>
+          <code>
+            public static void main(String[] args){
+              //...
+            }
+         </code></pre>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>When you write a method, you get to pick its signature</li>
+                    <ul>
+                        <li>The calling code must call it by it's proper signature (which you document)</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>You can't pick the signature of main, because we have an agreement with the JVM (which is
+                        outside
+                        our
+                        control)
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>It will call public static void main(String[])</li>
+                </ul>
+                <ul>
+                    <li>You must have this method exactly as the JVM is expecting it, or it can't start your program
+                    </li>
+                </ul>
+
+                <hr>
+                <h4>APIs</h4>
+                <ul>
+                    <li>To use an object you only need to know its <b> Application Programming Interface(API)</b></li>
+                </ul>
+
+                <ul>
+                    <li>An API includes a description of:</li>
+                    <ul>
+                        <li>All available methods and what they do</li>
+                        <li>The parameters they take and the values that they return</li>
+                    </ul>
+                </ul>
+
+                <ul>
+                    <li>The API is usually given in a special format called </li>
+                </ul>
+
+                <ul>
+                    <li>Javadoc for the built-in Java Core API classes may be installed with your JDK or IDE</li>
+                    <ul>
+                        <li>Readily available on the web (google "java String")</li>
+                    </ul>
+                    <p>Below demonstrates how blocks can contain other blocks. Each block introduces a new scope
+                        <img class="slide" src="images/API_example.PNG" alt="api_breakdown">
+                    </p>
+                </ul>
+                <hr>
+                <h4>Primitives - Pass By Value</h4>
+                <ul>
+                    <li>Primitives arguments are passed by value (a copy of the value is passed to the method)</li>
+                    <li>A primitive variable original value remains unchanged when passed into and manipulated inside a
+                        method
+                    </li>
+                    <br>
+                    <img class="slide" src="images/passbyvalue_code_snippet.PNG" alt="primitive_pass-by-value">
+                </ul>
+            </div>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>
+                <h2>Reference</h2>
+            </header>
+            <hr class="section_div">
+            <div class="sect-content">
+
+                <ul>
+                    <p>All the documentation on this page was formulated from these sources:</p>
+                    <ul>
+                        <li><a href="https://www.codecademy.com/learn/learn-java">Code Academy</a> </li>
+                        <li><a href="https://docs.oracle.com/javase/8/docs/">Oracle </a> </li>
+                    </ul>
+
+                </ul>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

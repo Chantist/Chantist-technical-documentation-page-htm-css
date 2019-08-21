@@ -1,0 +1,150 @@
+#main-doc {
+    position: absolute;
+    left: 25.05%;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    padding: 0px 30px 30px 30px;
+    font-size: 18px;
+}
+
+
+
+.main-section {
+    margin: 45px 0px;
+}
+
+#sect-objective * {
+    line-height: 24pt;
+}
+
+.sect-content {
+    padding: 0px 15px;
+}
+
+pre {
+    background-color: hsl(150, 6%, 94%);
+    white-space: pre-wrap;
+    width: 95%;
+    border-radius: 2px;
+    padding: 0px 0px 10px 0px;
+}
+
+code {
+    width: 100%;
+    display: block;
+    margin: -20px 0px -10px 0px;
+}
+
+.pic-border {
+
+    border-style: solid;
+    border-width: 1px;
+}
+
+img {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+.debug-button {
+    width: 6%;
+}
+
+img.slide {
+    display: block;
+    width: 35%;
+    height: auto;
+}
+
+img.quarter {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+img.half {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+img.full {
+    width: 75%;
+    height: auto;
+}
+
+img.icon {
+    max-width: 5%;
+    max-height: 5%;
+}
+
+ol li {
+    list-style-type: none;
+}
+
+
+li.dash {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section_div {
+    border: 1.5px solid green;
+    border-radius: 5px;
+}
+
+#navbar {
+    text-align: center;
+    list-style-type: none;
+    left: 0;
+    top: 0;
+    width: 25%;
+    background-color: hsl(120, 100%, 24%);
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+}
+
+#headline {
+    font-size: 35px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#nav-list {
+
+    padding-left: unset;
+}
+
+.nav-link {
+    font-size: 20px;
+    padding: 35px 0px;
+    border-top: 1px solid white;
+
+}
+
+.nav-link a {
+    /* text-align: center; */
+    color: white;
+}
+
+
+/*----------------- Responsive - Media Query ----------------- */
+
+@media(max-width: 945px) {
+    #headline {
+        font-size: 25px;
+
+    }
+
+}
